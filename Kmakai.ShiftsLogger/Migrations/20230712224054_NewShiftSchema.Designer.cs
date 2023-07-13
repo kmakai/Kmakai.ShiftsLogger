@@ -4,6 +4,7 @@ using Kmakai.ShiftsLogger.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kmakai.ShiftsLogger.Migrations
 {
     [DbContext(typeof(ShiftsLoggerContext))]
-    partial class ShiftsLoggerContextModelSnapshot : ModelSnapshot
+    [Migration("20230712224054_NewShiftSchema")]
+    partial class NewShiftSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,13 +1,7 @@
-﻿using Humanizer;
-using Kmakai.ShiftsLoggerUI.Services;
+﻿
+using Kmakai.ShiftsLoggerUI;
 
-ShiftsLoggerService shiftsLoggerService = new ShiftsLoggerService(new HttpClient());
-
-var shift = await shiftsLoggerService.GetShiftAsync(1);
-
-
-Console.WriteLine($"{shift.Id} punchIN: {shift.StartTime.ToShortDateString()}\n punchout: {shift.EndTime.ToShortDateString()} {shift.EmployeeName} totalhrs: {shift.Duration.ToString("hh'.'mm")}");
+ShiftLogger shiftLogger = new ShiftLogger();
+shiftLogger.Start();
 
 
-Console.WriteLine("press any key to exit");
-Console.ReadKey();
